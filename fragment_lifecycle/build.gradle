@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
+}
+
+android {
+    namespace 'com.mystery.fragment.lifecycle'
+    def app = rootProject.ext.android
+    compileSdk app.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.mystery.fragment.lifecycle'
+                artifactId = 'fragment-lifecycle'
+                version = '1.0.0'
+            }
+        }
+        repositories {
+            maven {
+                name = 'LocalRepo'
+                url = layout.buildDirectory.dir("repo")
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.lifecycle:lifecycle-common:2.10.0'
+}
