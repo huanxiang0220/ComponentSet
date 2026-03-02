@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RiseFall">
+        <attr name="rf_type" format="enum">
+            <enum name="rise" value="1" />
+            <enum name="fall" value="2" />
+        </attr>
+        <attr name="rf_rise_background" format="color|reference" />
+        <attr name="rf_fall_background" format="color|reference" />
+        <attr name="rf_riseTColor" format="color|reference" />
+        <attr name="rf_fallTColor" format="color|reference" />
+    </declare-styleable>
+
+</resources>

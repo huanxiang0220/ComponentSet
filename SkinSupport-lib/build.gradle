@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish' // 添加 Maven 发布插件
+}
+
+android {
+    namespace "com.ztcj.skinsupport_lib"
+    def app = rootProject.ext.android
+    compileSdk app.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion app.minSdkVersion
+        targetSdkVersion app.targetSdkVersion
+        versionCode app.versionCode
+        versionName app.versionName
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId 'com.ztcj.skinsupport_lib' // 组织ID
+                artifactId 'skinsupport_lib' // 项目ID
+                version '1.0.0'
+            }
+        }
+    }
+
+}
