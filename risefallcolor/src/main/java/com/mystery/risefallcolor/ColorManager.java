@@ -5,7 +5,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 
-import com.ztcj.skinsupport_lib.SkinSupport;
+import com.ztcj.skinsupport.SkinSupport;
 
 import java.util.ArrayList;
 import java.util.List;

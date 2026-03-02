@@ -32,7 +32,7 @@ android {
 def dps = rootProject.ext.androidDependencies
 dependencies {
     implementation dps.appcompat
-    implementation project(path: ':SkinSupport-lib')
+    implementation project(path: ':SkinSupport')
 }
 
 afterEvaluate {

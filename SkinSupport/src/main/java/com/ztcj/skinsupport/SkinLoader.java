@@ -1,4 +1,4 @@
-package com.ztcj.skinsupport_lib;
+package com.ztcj.skinsupport;
 
 import android.graphics.drawable.Drawable;
 
@@ -32,4 +32,7 @@ public class SkinLoader {
         return sInstance.mSkin.getDrawable(resId);
     }
 
+    public static Drawable getGif_(int resId) {
+        return sInstance.mSkin.getGif(resId);
+    }
 }

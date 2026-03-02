@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace "com.ztcj.skinsupport_lib"
+    namespace "com.ztcj.skinsupport"
     def app = rootProject.ext.android
     compileSdk app.compileSdkVersion
 

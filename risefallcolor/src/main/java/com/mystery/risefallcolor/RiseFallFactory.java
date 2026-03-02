@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.collection.ArrayMap;
 
-import com.ztcj.skinsupport_lib.SkinSupport;
+import com.ztcj.skinsupport.SkinSupport;
 
 import java.util.HashMap;
 import java.util.Map;
