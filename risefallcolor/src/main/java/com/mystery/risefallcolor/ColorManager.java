@@ -5,7 +5,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 
-import com.ztcj.skinsupport.SkinSupport;
+import com.mystery.skinsupport.SkinSupport;
 
 import java.util.ArrayList;
 import java.util.List;
