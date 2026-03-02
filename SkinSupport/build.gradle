@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace "com.ztcj.skinsupport"
+    namespace "com.mystery.skinsupport"
     def app = rootProject.ext.android
     compileSdk app.compileSdkVersion
 
@@ -36,8 +36,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
 
-                groupId 'com.ztcj.skinsupport_lib' // 组织ID
-                artifactId 'skinsupport_lib' // 项目ID
+                groupId 'com.mystery.skinsupport' // 组织ID
+                artifactId 'skinsupport' // 项目ID
                 version '1.0.0'
             }
         }
