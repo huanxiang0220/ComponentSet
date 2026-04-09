@@ -47,5 +47,6 @@
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:background="@drawable/magic_bg_indicator_right"
-        android:visibility="visible" />
+        android:visibility="invisible"
+        tools:visibility="visible" />
 </RelativeLayout>
