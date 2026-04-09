@@ -142,28 +142,28 @@ public class CommonNavigator extends FrameLayout implements IPagerNavigator, Nav
 
         mScrollView = root.findViewById(R.id.scroll_view);   // mAdjustMode为true时，mScrollView为null
         if (mScrollView != null) {
-            final View v_indicator_left_bg = root.findViewById(R.id.v_left_bg);
-            final View v_indicator_right_bg = root.findViewById(R.id.v_indicator_right_bg);
-            final int screenWidth = getScreenWidth(getContext());
-            mScrollView.addOnLayoutChangeListener(new OnLayoutChangeListener() {
-                @Override
-                public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
-                    View child = mScrollView.getChildAt(0);
-                    if (child.getWidth() < screenWidth)
-                        v_indicator_right_bg.setVisibility(INVISIBLE);
-                }
-            });
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                mScrollView.setOnScrollChangeListener(new OnScrollChangeListener() {
-                    @Override
-                    public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                        v_indicator_left_bg.setVisibility(scrollX == 0 ? INVISIBLE : VISIBLE);
-                        View child = mScrollView.getChildAt(0);
-                        int width = child.getWidth();
-                        v_indicator_right_bg.setVisibility(scrollX < (width - screenWidth - 5) ? VISIBLE : INVISIBLE);
-                    }
-                });
-            }
+//            final View v_indicator_left_bg = root.findViewById(R.id.v_left_bg);
+//            final View v_indicator_right_bg = root.findViewById(R.id.v_indicator_right_bg);
+//            final int screenWidth = getScreenWidth(getContext());
+//            mScrollView.addOnLayoutChangeListener(new OnLayoutChangeListener() {
+//                @Override
+//                public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+//                    View child = mScrollView.getChildAt(0);
+//                    if (child.getWidth() < screenWidth)
+//                        v_indicator_right_bg.setVisibility(INVISIBLE);
+//                }
+//            });
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                mScrollView.setOnScrollChangeListener(new OnScrollChangeListener() {
+//                    @Override
+//                    public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//                        v_indicator_left_bg.setVisibility(scrollX == 0 ? INVISIBLE : VISIBLE);
+//                        View child = mScrollView.getChildAt(0);
+//                        int width = child.getWidth();
+//                        v_indicator_right_bg.setVisibility(scrollX < (width - screenWidth - 5) ? VISIBLE : INVISIBLE);
+//                    }
+//                });
+//            }
         }
 
         mTitleContainer = (LinearLayout) root.findViewById(R.id.title_container);
